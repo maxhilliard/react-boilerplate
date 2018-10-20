@@ -31,6 +31,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "css-loader": "1.0.0",
+    "enzyme-to-json": "3.3.4",
     "eslint": "4.19",
     "eslint-config-airbnb": "17.0.0",
     "eslint-plugin-import": "2.12.0",
@@ -42,7 +43,6 @@
     "postcss-loader": "2.1.6",
     "pre-commit": "1.2.2",
     "pre-push": "0.1.1",
-    "react-test-renderer": "16.4.1",
     "style-loader": "0.21.0",
     "webpack": "4.16.3",
     "webpack-cli": "3.1.0",
@@ -62,8 +62,16 @@
     "setupTestFrameworkScriptFile": "<rootDir>/internals/test/setupTests.js",
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
-    }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
-  "pre-commit": ["lint", "test"],
-  "pre-push": ["build"]
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "pre-push": [
+    "build"
+  ]
 }
