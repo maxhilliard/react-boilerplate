@@ -25,11 +25,8 @@
   },
   "homepage": "https://github.com/maxhilliard/react-boilerplate#readme",
   "devDependencies": {
+    "awesome-typescript-loader": "5.2.1",
     "babel-core": "6.26.3",
-    "babel-jest": "23.4.2",
-    "babel-loader": "7.1.5",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
     "css-loader": "1.0.0",
     "eslint": "4.19",
     "eslint-config-airbnb": "17.0.0",
@@ -43,12 +40,17 @@
     "pre-commit": "1.2.2",
     "pre-push": "0.1.1",
     "react-test-renderer": "16.4.1",
+    "source-map-loader": "0.2.4",
     "style-loader": "0.21.0",
+    "typescript": "3.2.2",
+    "typings-for-css-modules-loader": "1.7.0",
     "webpack": "4.16.3",
     "webpack-cli": "3.1.0",
     "webpack-dev-server": "3.1.5"
   },
   "dependencies": {
+    "@types/react": "16.7.18",
+    "@types/react-dom": "16.0.11",
     "autoprefixer": "9.0.2",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
@@ -65,6 +67,11 @@
       "\\.(gif|ttf|eot|svg|png|jpeg)$": "<rootDir>/internals/test/__mocks__/fileMock.js"
     }
   },
-  "pre-commit": ["lint", "test"],
-  "pre-push": ["build"]
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "pre-push": [
+    "build"
+  ]
 }

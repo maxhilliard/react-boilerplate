@@ -6,7 +6,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, '/_dist'),
         filename: 'index.bundle.js',
@@ -16,12 +16,11 @@ module.exports = {
     },
     module: {
         rules: [
+            // changed from { test: /\.jsx?$/, use: { loader: 'babel-loader' } },
             {
-                test: /\.js[x]?$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
+                test: /\.(t|j)sx?$/, use: { loader: 'awesome-typescript-loader' },
+            }, {
+                enforce: 'pre', test: /\.js$/, loader: 'source-map-loader'
             }, {
                 test: /\.css$/,
                 use: [
@@ -45,6 +44,6 @@ module.exports = {
         HtmlWebpackPluginConfig,
     ],
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
 };
